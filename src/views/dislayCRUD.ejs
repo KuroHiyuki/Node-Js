@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Display</title>
+</head>
+<body>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Address</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+            <% for(let i=0; i < table.length; i++) { %>
+                <tr>
+                  <td ><%= table[i].id %></td>
+                  <td><%= table[i].firstName %></td>
+                  <td><%= table[i].lastName %></td>
+                  <td><%= table[i].email %></td>
+                  <td><%= table[i].phone %></td>
+                  <td><%= table[i].address %></td>
+                  <td><a href="/edit?id=<%= table[i].id %>" type="button" class="btn btn-primary">Edit</a></td>
+                  <td><a href="/delete?id=<%= table[i].id %>" type="button" class="btn btn-danger">Delete</a></td>
+                </tr>
+            <% } %>
+        </tbody>
+     
+      </table>
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <a href="/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Login</a>
+        <a href="/register" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Register</a>
+      </div>
+</body>
+</html>

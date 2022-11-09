@@ -35,6 +35,87 @@ let HashPassword =(pass) => {
     })
 }
 
+let GetAllUser =() => {
+    return new  Promise (async(resolve, reject) => {
+        try {
+            let TableUser = await db.User.findAll({
+                raw: true,
+            })
+            resolve(TableUser);
+        } catch (error) {
+            reject(error);
+        }
+    })
+}
+
+let GetData = (data) => {
+    return new  Promise (async(resolve, reject) => {
+        try {
+            let InfoUser = await db.User.findAll({
+                raw: true,
+                where: {
+                    Id:data,
+                }
+            })
+            if (InfoUser) {
+                resolve(InfoUser);
+            } else {
+                resolve([]);
+            };
+        } catch (error) {
+            reject(error);
+        }
+    })
+}
+let DeleteData = (Userid) => {
+    return new  Promise (async(resolve, reject) => {
+        try {
+            let InfoUser = await db.User.destroy({
+                raw: true,
+                where: {
+                    Id:Userid,
+                }
+            })
+            if (InfoUser) {
+                resolve(InfoUser);
+            } else {
+                resolve([]);
+            };
+        } catch (error) {
+            reject(error);
+        }
+    })
+}
+let EditData = (Userid) => {
+    return new  Promise (async(resolve, reject) => {
+        try {
+            let InfoEdit = await db.User.update({
+                firstName: Userid.firstName,
+                lastName: Userid.lastName,
+                gender: Userid.sex,
+                roleId: Userid.RoleId,
+                phone: Userid.phone,
+                address: Userid.address,
+            },{
+                raw: true,
+                where: {
+                    Id:Userid.ID,
+                }
+            })
+            if (InfoEdit) {
+                resolve(InfoEdit);
+            } else {
+                resolve({});
+            };
+        } catch (error) {
+            reject(error);
+        }
+    })
+}
 module.exports = {
     CreateNewUser:CreateNewUser,
+    GetAllUser: GetAllUser,
+    DeleteData: DeleteData,
+    EditData: EditData,
+    GetData:GetData,
 }
