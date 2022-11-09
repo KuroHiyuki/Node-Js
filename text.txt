@@ -1,0 +1,8 @@
+
+npm install --save body-parser dotenv ejs express
+body-parser - để  viết api giúp tối giản được các tham được chuyển tù client lên server
+dotenv - giúp lấy các tham ssố trong môi trường
+ejs - view engine 
+express - framework
+npm install --save-dev @babel/core @babel/preset-env @babel/node nodemon
+3 cái đầu tiên là trình compiler - phiên dịch từ javascript sang html
