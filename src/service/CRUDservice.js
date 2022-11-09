@@ -96,6 +96,7 @@ let EditData = (Userid) => {
                 roleId: Userid.RoleId,
                 phone: Userid.phone,
                 address: Userid.address,
+                updatedAt: Date(),
             },{
                 raw: true,
                 where: {

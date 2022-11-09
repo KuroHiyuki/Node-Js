@@ -14,8 +14,12 @@ app.use(bodyparser.urlencoded({extended:true}));
 viewEngine(app);
 initRouter(app);
 
+
 connect();
 let port = process.env.PORT || 6969; // khi port == undifined => port =  6969;
+
+process.env.TZ; // UTC +00:00
+console.log(new Date().toString())
 
 app.listen(port,  () => {
     console.log("Backend node Js is running port:" + port);
