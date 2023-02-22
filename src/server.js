@@ -30,7 +30,7 @@ initRouter(app);
 
 
 connect();
-let port = process.env.PORT || 6969; // khi port == undifined => port =  6969;
+let port = process.env.PORT || 8080; // khi port == undifined => port =  6969;
 
 process.env.TZ; // UTC +00:00
 // console.log(new Date().toString())
