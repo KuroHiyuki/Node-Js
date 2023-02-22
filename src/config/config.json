@@ -5,8 +5,8 @@
     "database": "coursemanagement",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "logging": false,
-    "timezone": "Asia/Ho_Chi_Minh"
+    "logging": false
+
   },
   "test": {
     "username": "root",
@@ -14,8 +14,8 @@
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "logging": false,
-    "timezone": "Asia/Ho_Chi_Minh"
+    "logging": false
+   
   },
   "production": {
     "username": "root",
@@ -23,7 +23,7 @@
     "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "logging": false,
-    "timezone": "Asia/Ho_Chi_Minh"
+    "logging": false
+    
   }
 }

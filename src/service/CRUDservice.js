@@ -6,6 +6,7 @@ const salt = bcrypt.genSaltSync(10);
 let CreateNewUser = async (data) => {
   return new Promise(async (resolve, reject) => {
     try {
+      let userData = {};
       let newEmail = await data.email;
       let emailData = await db.User.findOne({
         where: { email: newEmail },
@@ -22,9 +23,13 @@ let CreateNewUser = async (data) => {
           phone: data.phone,
           address: data.address,
         });
-        let arlet = resolve('Đăng kí thành công');
+        userData.errCode= 1.1;
+        userData.errMessage= "Đăng kí thành công";
+        resolve(userData)
       } else {
-        resolve("Email đã tồn tại");
+        userData.errCode= 1.2;
+        userData.errMessage= "Email đã tồn tại! Vui lòng thử Email khác";
+        resolve(userData)
       }
     } catch (error) {
       reject(error);
